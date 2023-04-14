@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoData</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <h1 class="navbar__title">
+          Todo<span class="navbar__title--sec">Data</span>
+        </h1>
+        <p class="navbar__subtitle">focus on simple things.</p>
+        <ul class="navbar__items">
+          <li class="navbar__item" data-modal="modal-one">
+            <span class="material-symbols-rounded"> add </span>New Todo
+          </li>
+          <li class="navbar__item selected">
+            <span class="material-symbols-rounded"> checklist </span>Todo-list
+          </li>
+          <li class="navbar__item">
+            <span class="material-symbols-rounded"> settings </span>Settings
+          </li>
+        </ul>
+        <div class="navbar__profile">
+          <div class="navbar__profile-container">
+            <div class="navbar__profile-img"></div>
+            <h2 class="navbar__profile-title">Name Surname</h2>
+          </div>
+        </div>
+      </nav>
+      <!-- MODAL -->
+      <div class="modal" id="modal-one">
+        <div class="modal-bg modal-exit"></div>
+        <div class="modal-container">
+          <div class="modal-header">
+            <h1 class="modal__title">New Todo</h1>
+            <p class="modal__subtitle">Write your new todo</p>
+          </div>
+          <div class="modal-body">
+            <form action="" class="modal__form">
+              <ul>
+                <li>
+                  <label for="todoDesc">Description</label>
+                  <input type="text" name="todoDesc" id="todoDesc" />
+                </li>
+
+                <li>
+                  <label for="todoTag">Tag</label>
+                  <select
+                    class="selectTag"
+                    name="todoTag"
+                    id="todoSelect"
+                  ></select>
+                </li>
+                <li>
+                  <label for="todoDate">Due date</label>
+                  <input name="todoDate" type="date" id="todoDate" />
+                </li>
+                <li>
+                  <div class="modal__checkbox">
+                    <span>Important</span>
+                    <input
+                      type="checkbox"
+                      name="taskImportant"
+                      id="todoImportant"
+                    />
+                  </div>
+                </li>
+              </ul>
+              <button class="modal__submit-btn" type="submit">New Todo</button>
+            </form>
+          </div>
+
+          <button class="modal-close modal-exit">
+            <span class="material-symbols-rounded"> close </span>
+          </button>
+        </div>
+      </div>
+      <!-- MODAL -->
+      <!-- MODAL 2-->
+      <div class="modal" id="edit-todo">
+        <div class="modal-bg modal-exit"></div>
+        <div class="modal-container">
+          <div class="modal-header">
+            <h1 class="modal__title">Edit Todo</h1>
+            <p class="modal__subtitle">Edit your current todo</p>
+          </div>
+          <div class="modal-body">
+            <form action="" class="modal__form">
+              <ul>
+                <li>
+                  <label for="editTodoDesc">Description</label>
+                  <input
+                    type="text"
+                    name="todoDesc"
+                    id="editTodoDesc"
+                    value=""
+                  />
+                </li>
+                <li>
+                  <label for="editTodoTag">Tag</label>
+                  <select
+                    class="selectTag"
+                    name="todoTag"
+                    id="editTodoTag"
+                  ></select>
+                </li>
+                <li>
+                  <label for="editTodoDate">Due date</label>
+                  <input name="todoDate" type="date" id="editTodoDate" />
+                </li>
+                <li>
+                  <div class="modal__checkbox">
+                    <span>Important</span>
+                    <input
+                      type="checkbox"
+                      name="taskImportant"
+                      id="editTodoImportant"
+                    />
+                  </div>
+                </li>
+              </ul>
+              <button class="modal__submit-btn" type="submit" id="editTodoBtn">
+                Edit Todo
+              </button>
+            </form>
+          </div>
+
+          <button class="modal-close modal-exit">
+            <span class="material-symbols-rounded"> close </span>
+          </button>
+        </div>
+      </div>
+      <!-- DAAAA -->
+      <div class="container-content">
+        <div class="content__blocks">
+          <div class="content__block">
+            <p class="content__number">54</p>
+            <p class="content__title">TASKS DONE</p>
+          </div>
+          <div class="content__block">
+            <p class="content__number">5</p>
+            <p class="content__title">TASKS TO DO</p>
+          </div>
+          <div class="content__block inverted">
+            <p class="content__number">2</p>
+            <p class="content__title">URGENT TASKS</p>
+          </div>
+          <div class="content__block">
+            <p class="content__number">5</p>
+            <p class="content__title">DUE TOMORROW</p>
+          </div>
+        </div>
+        <div class="content__important-tasks">
+          <h3 class="content__title">Important Tasks</h3>
+          <ul class="content__list">
+            <li class="content__item">
+              <p class="content__item-name">Clean House</p>
+              <span class="content__item-due">23/10</span>
+              <div class="content__item-details">
+                <span class="item__badge">UNIVERSITY</span>
+                <input type="checkbox" name="" id="" />
+                <span class="material-symbols-rounded"> more_vert </span>
+              </div>
+            </li>
+            <li class="content__item">
+              <p class="content__item-name">Clean House</p>
+              <div class="content__item-details">
+                <span class="item__badge">UNIVERSITY</span>
+                <input type="checkbox" name="" id="" />
+                <span class="material-symbols-rounded"> more_vert </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="content__all-tasks">
+          <h3 class="content__title">
+            All Tasks
+            <span class="material-symbols-rounded"> filter_list </span>
+          </h3>
+          <ul class="all-tasks__list">
+            <li class="all-tasks__item itemChecked">
+              <p class="all-tasks__item-name">Clean House</p>
+              <div class="content__item-details">
+                <span class="item__badge">UNIVERSITY</span>
+                <input type="checkbox" name="" id="" />
+                <span class="material-symbols-rounded"> more_vert </span>
+              </div>
+            </li>
+            <li class="all-tasks__item">
+              <p class="all-tasks__item-name">Clean House</p>
+              <div class="content__item-details">
+                <span class="item__badge">UNIVERSITY</span>
+                <input type="checkbox" name="" id="" />
+                <span class="material-symbols-rounded"> more_vert </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
