@@ -25,7 +25,7 @@
           <li class="navbar__item selected">
             <span class="material-symbols-rounded"> checklist </span>Todo-list
           </li>
-          <li class="navbar__item">
+          <li class="navbar__item" data-modal="modal-three">
             <span class="material-symbols-rounded"> settings </span>Settings
           </li>
         </ul>
@@ -139,7 +139,49 @@
           </button>
         </div>
       </div>
-      <!-- DAAAA -->
+      <!-- MODAL 2-->
+      <!-- MODAL 3-->
+      <div class="modal" id="modal-three">
+        <div class="modal-bg modal-exit"></div>
+        <div class="modal-container">
+          <div class="modal-header">
+            <h1 class="modal__title">New tag</h1>
+            <p class="modal__subtitle">Write your new tag</p>
+          </div>
+          <div class="modal-body">
+            <form action="" class="modal__form">
+              <ul>
+                <li>
+                  <label for="editTagName">New Tag</label>
+                  <input
+                    type="text"
+                    name="editTagName"
+                    id="editTagName"
+                    value=""
+                  />
+                </li>
+                <li>
+                  <label for="editTagColor">Color</label>
+                  <input
+                    type="color"
+                    name="editTagColor"
+                    id="editTagColor"
+                    value=""
+                  />
+                </li>
+              </ul>
+              <button class="modal__submit-btn" type="submit" id="editTagBtn">
+                New Tag
+              </button>
+            </form>
+          </div>
+
+          <button class="modal-close modal-exit">
+            <span class="material-symbols-rounded"> close </span>
+          </button>
+        </div>
+      </div>
+      <!-- MODAL 3 -->
       <div class="container-content">
         <div class="content__blocks">
           <div class="content__block">

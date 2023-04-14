@@ -5,6 +5,17 @@ let tags = ["Default", "Homework", "University"];
 const selectTag = document.querySelectorAll(".selectTag");
 let todos = [];
 
+const getLocalTodos = () => {
+  const arrayString = localStorage.getItem("todosArray");
+  if (arrayString !== null) {
+    todos = JSON.parse(arrayString);
+  } else {
+    todos = [];
+  }
+};
+
+getLocalTodos();
+
 const date = new Date();
 
 let day = date.getDate();
@@ -70,6 +81,7 @@ onSubmitButton.addEventListener("click", (event) => {
 
     todos.push(newTodo);
 
+    console.log(localStorage.getItem("todosArray"));
     // TODO: add reset function
 
     // * Close modal, render todos and add events listeners to them
@@ -95,6 +107,8 @@ class TodoItem {
 }
 
 const renderTodos = () => {
+  const arrayString = JSON.stringify(todos);
+  localStorage.setItem("todosArray", arrayString);
   const allTasks = document.querySelector(".all-tasks__list");
   const importantTasks = document.querySelector(".content__list");
   allTasks.innerHTML = "";
@@ -174,6 +188,8 @@ const renderTodos = () => {
             </div>
              `;
       importantTasks.appendChild(newItemImportant);
+      const arrayString = JSON.stringify(todos);
+      localStorage.setItem("todosArray", arrayString);
     }
 
     allTasks.appendChild(newItemTodo);
@@ -229,6 +245,7 @@ const uid = function () {
 
 const onDeleteTodo = (id) => {
   todos = todos.filter((todo) => todo.todoId !== id);
+
   renderTodos();
 };
 
@@ -300,3 +317,5 @@ const addDeleteListener = () => {
 const getCurrentTodo = (id) => {
   return todos.find((todo) => todo.todoId === id);
 };
+
+renderTodos();
